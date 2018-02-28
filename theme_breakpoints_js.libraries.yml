@@ -4,3 +4,4 @@ breakpointsLoader:
   dependencies:
     - core/jquery
     - core/drupalSettings
+    - core/matchmedia
