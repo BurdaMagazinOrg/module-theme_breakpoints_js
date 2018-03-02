@@ -3,7 +3,7 @@
  * Parse inline JSON and initialize the breakpointSettings global object.
  */
 
-(function ($, drupalSettings) {
+(function ($, drupalSettings, window) {
 
   'use strict';
 
@@ -70,4 +70,4 @@
     }();
   }
 
-})(jQuery, drupalSettings);
+})(jQuery, drupalSettings, window);

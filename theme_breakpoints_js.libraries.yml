@@ -5,3 +5,4 @@ breakpointsLoader:
     - core/jquery
     - core/drupalSettings
     - core/matchmedia
+    - core/matchmedia.addListener
