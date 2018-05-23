@@ -3,7 +3,7 @@
  * Parse inline JSON and initialize the breakpointSettings global object.
  */
 
-(function ($, drupalSettings, window) {
+(function (drupalSettings, window) {
 
   'use strict';
 
@@ -27,7 +27,10 @@
       };
 
       var triggerBreakpointChange = function () {
-        $(window).trigger('themeBreakpoint:changed', this.currentBreakpoint);
+        // This is deprecated but needed for IE compatibility.
+        var breakpoint_changed_event = document.createEvent('CustomEvent');
+        breakpoint_changed_event.initCustomEvent('themeBreakpoint:changed', true, true, this.currentBreakpoint);
+        window.dispatchEvent(breakpoint_changed_event);
       }.bind(this);
 
       this.breakpointChangeHandler = function () {
@@ -70,4 +73,4 @@
     }();
   }
 
-})(jQuery, drupalSettings, window);
+})(drupalSettings, window);
